@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:warp/homepage.dart';
+import 'package:warp/mobilescreenlayout.dart';
+import 'package:warp/responsive_layout.dart';
+import 'package:warp/webscreenlayout.dart';
 
 void main() {
   runApp(const MyApp());
@@ -12,12 +15,13 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
+      title: 'Warp',
+      theme: ThemeData.dark().copyWith(
+        colorScheme: const ColorScheme.dark(),
       ),
-      home: const HomePage(),
+      home: const ResponsiveLayout(
+          mobileScreenLayout: MobileScreenLayout(),
+          webScreenLayout: WebScreenLayout()),
     );
   }
 }
