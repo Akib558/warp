@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:warp/widgets/colors.dart';
+import 'package:warp/widgets/contact_list.dart';
 
 class MobileScreenLayout extends StatelessWidget {
   const MobileScreenLayout({super.key});
@@ -10,6 +11,8 @@ class MobileScreenLayout extends StatelessWidget {
         length: 3,
         child: Scaffold(
           appBar: AppBar(
+            backgroundColor: appBarColor,
+            elevation: 0,
             title: const Text(
               "Warp",
               style: TextStyle(
@@ -43,6 +46,7 @@ class MobileScreenLayout extends StatelessWidget {
                   Tab(text: 'CALLS'),
                 ]),
           ),
+          body: const ContactList(),
         ));
   }
 }
